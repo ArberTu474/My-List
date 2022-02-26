@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap");
+
+:root {
+  --clr-primary-color: #eb79b5;
+  --clr-primary-color-hover: #e057a0;
+  --clr-primary-color-light: #fce4f3;
+
+  --clr-primary-color---dark: #68224c;
+  --clr-primary-color-light---dark: #d487b5;
+
+  --clr-input-filed-bg: #f7f7f7;
+  --clr-input-filed-stroke: #dadada;
+
+  --clr-bg-color: #f5e3f3;
+  --clr-text-color: #303030;
+
+  --clr-white: #fff8fe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  outline: transparent;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--clr-bg-color);
+  color: var(--clr-text-color);
+}
+
+section + section {
+  margin-top: 2rem;
+}
+
+.container {
+  max-width: 66rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/*------------------ NAV ------------------*/
+
+nav {
+  font-size: 3rem;
+  padding: 1em 0;
+}
+
+/*------------------ MAIN ------------------*/
+
+.card {
+  background-color: var(--clr-white);
+  padding: 2.8rem;
+  border-radius: 28px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
+}
+
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+/*------------------ FORM ------------------*/
+
+.item-add {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  background-color: var(--clr-input-filed);
+  font-size: 1.8rem;
+  padding: 1rem;
+  border: 2px solid var(--clr-input-filed-stroke);
+  border-radius: 8px;
+  transition: border 300ms;
+}
+
+.input:focus {
+  border: 2px solid var(--clr-primary-color---dark);
+}
+
+/* Placeholder text color  */
+.input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #dddddd;
+  opacity: 1; /* Firefox */
+}
+
+.input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #dddddd;
+}
+
+.input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #dddddd;
+}
+
+.submit {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--clr-primary-color-light);
+  background-color: var(--clr-primary-color);
+  padding: 1rem;
+  border-radius: 50px;
+  transition: background-color 300ms;
+}
+
+.submit:hover,
+.submit:focus {
+  background-color: var(--clr-primary-color-hover);
+}
+
+input + input {
+  margin-top: 2rem;
+}
+
+/*------------------ TASK ------------------*/

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Colored navBar-->
+    <meta name="theme-color" content="#e6a2ca" />
+    <meta name="msapplication-navbutton-color" content="#e6a2ca" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>List</title>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <h1 class="logo">Tasks</h1>
+      </div>
+    </nav>
+
+    <section class="main">
+      <div class="container">
+        <div class="card">
+          <h2 class="title">Add a task</h2>
+
+          <form action="add.php" class="item-add" method="POST">
+            <input
+              type="text"
+              name="name"
+              placeholder="Type a new task..."
+              class="input"
+              autocomplete="off"
+              required
+            />
+            <input type="submit" value="Add" class="submit" />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="tasks">
+      <div class="container">
+        <ul class="card">
+          <li class="task">
+            Eat breakfast<span class="material-icons-outlined delete">
+              delete
+            </span>
+          </li>
+          <li class="task">
+            Sleep<span class="material-icons-outlined delete"> delete </span>
+          </li>
+          <li class="task">
+            Pay games<span class="material-icons-outlined delete">
+              delete
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

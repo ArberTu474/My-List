@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles.css" />
     <title>List</title>
   </head>
-  <body>
+  <body onload="emptyTasks()">
     <nav>
       <div class="container">
         <h1 class="logo">Tasks</h1>
@@ -29,39 +29,46 @@
         <div class="card">
           <h2 class="title">Add a task</h2>
 
-          <form action="add.php" class="item-add" method="POST">
+          <div class="item-add">
             <input
               type="text"
               name="name"
               placeholder="Type a new task..."
               class="input"
-              autocomplete="off"
               required
+              autocomplete="off"
+              data-input-field
             />
-            <input type="submit" value="Add" class="submit" />
-          </form>
+            <button class="submit" data-add>Add</button>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="tasks">
       <div class="container">
-        <ul class="card">
-          <li class="task">
-            Eat breakfast<span class="material-icons-outlined delete">
-              delete
-            </span>
-          </li>
-          <li class="task">
-            Sleep<span class="material-icons-outlined delete"> delete </span>
-          </li>
-          <li class="task">
-            Pay games<span class="material-icons-outlined delete">
-              delete
-            </span>
-          </li>
+        <ul class="card" data-list>
+          <!-- <li class="task">
+            Eat breakfast
+            <div class="action-buttons">
+            <span class="material-icons-outlined btn" data-check> done </span>
+            <span class="material-icons-outlined btn" data-delete> delete </span>
+          </li> -->
+          <li class="empty" data-empty>You have no tasks!😉</li>
+        </div>
+          
         </ul>
       </div>
     </section>
+
+    <footer>
+      <div class="container">
+        <a class="code" href="https://github.com/ArberTu474/My-List" target="_blank">
+          <p>Source Code</p>
+          <img src="img/github.svg" alt="github" />
+        </a>
+      </div>
+    </footer>
+    <script src="main.js"></script>
   </body>
 </html>

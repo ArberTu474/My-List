@@ -12,6 +12,19 @@ emptyTasks();
 //Focus in the input field
 inputFiled.focus();
 
+inputFiled.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    addTasks(
+      createCheckButton(),
+      createDeleteButton(),
+      createTask(),
+      createActionDiv(),
+      inputValidation(inputFiled)
+    );
+  }
+});
+
 //Create check button
 function createCheckButton() {
   const checkButton = document.createElement("span");

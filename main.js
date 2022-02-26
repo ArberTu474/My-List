@@ -31,7 +31,7 @@ function createCheckButton() {
 
   checkButton.classList.add("material-icons-outlined");
   checkButton.classList.add("btn");
-  checkButton.innerHTML = "done";
+  checkButton.textContent = "done";
   const att = document.createAttribute("data-check");
   checkButton.setAttributeNode(att);
   const onClick = document.createAttribute("onClick");
@@ -47,7 +47,7 @@ function createDeleteButton() {
 
   checkDelete.classList.add("material-icons-outlined");
   checkDelete.classList.add("btn");
-  checkDelete.innerHTML = "delete";
+  checkDelete.textContent = "delete";
   const att = document.createAttribute("data-delete");
   checkDelete.setAttributeNode(att);
   const onClick = document.createAttribute("onClick");
@@ -90,7 +90,7 @@ function addTasks(check, button, task, action, input) {
     inputFiled.value = "";
     return;
   } else {
-    task.innerHTML = input;
+    task.textContent = input;
     task.appendChild(action);
 
     list.appendChild(task);

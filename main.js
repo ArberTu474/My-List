@@ -7,6 +7,7 @@ const deleteBtn = document.querySelector("[data-delete]");
 const empty = document.querySelector("[data-empty]");
 
 const actionButtons = document.querySelector(".action-buttons");
+
 emptyTasks();
 
 //Focus in the input field
@@ -29,15 +30,16 @@ inputFiled.addEventListener("keyup", (e) => {
 function createCheckButton() {
   const checkButton = document.createElement("span");
 
+  //Adding classs for the check button
   checkButton.classList.add("material-icons-outlined");
   checkButton.classList.add("btn");
   checkButton.textContent = "done";
-  const att = document.createAttribute("data-check");
-  checkButton.setAttributeNode(att);
-  const onClick = document.createAttribute("onClick");
-  onClick.value = "checkTask(this)";
-  checkButton.setAttributeNode(onClick);
-  checkButton.setAttributeNode(att);
+
+  //Adding attributes for the check button
+  checkButton.setAttribute("data-check", "");
+  checkButton.setAttribute("onClick", "checkTask(this)");
+  checkButton.setAttribute("title", "Mark it as done");
+
   return checkButton;
 }
 
@@ -45,19 +47,20 @@ function createCheckButton() {
 function createDeleteButton() {
   const checkDelete = document.createElement("span");
 
+  //Adding classs for the delete button
   checkDelete.classList.add("material-icons-outlined");
   checkDelete.classList.add("btn");
   checkDelete.textContent = "delete";
-  const att = document.createAttribute("data-delete");
-  checkDelete.setAttributeNode(att);
-  const onClick = document.createAttribute("onClick");
-  onClick.value = "removeTask(this)";
-  checkDelete.setAttributeNode(onClick);
+
+  //Adding attributes for the delete button
+  checkDelete.setAttribute("data-delete", "");
+  checkDelete.setAttribute("title", "Delete task!");
+  checkDelete.setAttribute("onClick", "removeTask(this)");
+
   return checkDelete;
 }
 
 //Create task item
-
 function createTask() {
   const task = document.createElement("li");
 
@@ -66,7 +69,6 @@ function createTask() {
 }
 
 //Add tasks to the list
-
 function createActionDiv() {
   const actionDiv = document.createElement("div");
   actionDiv.classList.add("action-buttons");
@@ -85,7 +87,7 @@ function addTasks(check, button, task, action, input) {
   action.appendChild(check);
   action.appendChild(button);
 
-  if (input == 0) {
+  if (input === 0) {
     inputFiled.focus();
     inputFiled.value = "";
     return;
